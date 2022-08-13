@@ -1,5 +1,6 @@
 package com.gabriel.workshopmongo.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,4 +21,8 @@ public class PostService {
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
 	}
 
+	public List<Post> searchTitle(String text) {
+		return repo.searchTitle(text);
+	}
+	
 }
